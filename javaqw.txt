@@ -1,0 +1,42 @@
+package personas;
+
+/**
+ *
+ * @author PC
+ */
+public class Persnasprueva {
+    public static void main(String args[]){
+        //Creacion de un objeto
+        Personas p1 = new Personas();
+        
+        
+        System.out.println("Valores por default del objeto Persona"); 
+        p1.desplegarNombre();
+        
+        p1.nombre = "jaime"; 
+        p1.apellidoPaterno = "Esparza"; 
+        p1.apellidoMaterno = "Lara";
+       
+        System.out.println("\nNuevos valores del objeto Persona"); 
+        p1.desplegarNombre();
+    }
+}
+
+
+package personas;
+
+
+public class Personas {
+    
+    
+    String nombre;
+    String apellidoPaterno;
+    String apellidoMaterno;
+    
+    public void desplegarNombre(){
+        System.out.println("Nombre : " + nombre);
+        System.out.println("Apellido Paterno: " + apellidoPaterno);
+        System.out.println("Apellido Materno: " + apellidoMaterno);
+    }
+    
+}
