@@ -1,0 +1,84 @@
+1
+paquete  caja ;
+
+/ **
+ *
+* @autor PC09-LAB02
+ * /
+ clase  pública CAJA {
+    int ancho
+    int alto;
+    int profundo
+    
+    CAJA () {}
+    CAJA ( int ancho, int alto, int profundo) {
+        esta . ancho = ancho;
+        esta . alto = alto;
+        esta . profundo = profundo;
+    }   
+    int volumen () {
+        retorno ancho * alto * profundo;
+    }
+    doble vacío () {
+        esta . ancho =  esto . ancho * 2 ;
+        esta . alto =  esto . alto * 2 ;
+        esta . profundo =  esto . profundo * 2 ;
+    }
+        
+    int sumadecaras () {
+        int  A1 , A2 , A3 ;
+        A1 = alto * ancho;
+        A1 = A1 * 2 ;
+        A2  = ancho * profundo;
+        A2 = A2 * 2 ;
+        A3  = alto * profundo;
+        A3 = A3 * 2 ;
+        
+      devuelve  A1 + A2 + A3 ;
+        
+        
+    }
+        
+}
+2.	
+paquete  caja ;
+
+/ **
+ *
+* @autor PC09-LAB02
+ * /
+ clase  pública CAJA {
+    int ancho
+    int alto;
+    int profundo
+    
+    CAJA () {}
+    CAJA ( int ancho, int alto, int profundo) {
+        esta . ancho = ancho;
+        esta . alto = alto;
+        esta . profundo = profundo;
+    }   
+    int volumen () {
+        retorno ancho * alto * profundo;
+    }
+    doble vacío () {
+        esta . ancho =  esto . ancho * 2 ;
+        esta . alto =  esto . alto * 2 ;
+        esta . profundo =  esto . profundo * 2 ;
+    }
+        
+    int sumadecaras () {
+        int  A1 , A2 , A3 ;
+        A1 = alto * ancho;
+        A1 = A1 * 2 ;
+        A2  = ancho * profundo;
+        A2 = A2 * 2 ;
+        A3  = alto * profundo;
+        A3 = A3 * 2 ;
+        
+      devuelve  A1 + A2 + A3 ;
+        
+        
+    }
+        
+}
