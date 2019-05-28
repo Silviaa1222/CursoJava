@@ -1,0 +1,202 @@
+/ *
+ * Para cambiar este encabezado de licencia, elija los encabezados de licencia en Propiedades del proyecto.
+* Para cambiar este archivo de plantilla, seleccione Herramientas | Plantillas
+ * y abrir la plantilla en el editor.
+ * /
+paquete  BANCO.pkg1 ;
+
+/ **
+ *
+* @autor PC09-LAB02
+ * /
+ clase  pública CUENTA {
+   Cuerda privada nombre;
+     Cuerda privada numeroCuenta;
+    Privado  doble tipoInteres;
+     doble saldo privado ;
+
+    // Constructor por defecto
+     CUENTA pública () {
+    }
+
+    // Constructor con parámetros
+     CUENTA pública ( String  nombre , String  numeroCuenta , double  tipoInteres , double  saldo ) {
+        esta . nombre = nombre;
+        esta . numeroCuenta = numeroCuenta;
+        esta . tipoInteres = tipoInteres;
+        esta . saldo = saldo;
+    }
+
+    // Constructor copia
+    pública  CUENTA ( última  CUENTA  c ) {
+        nombre = c . nombre
+        numeroCuenta = c . numeroCuenta;
+        tipoInteres = c . tipoInteres;
+        saldo = c . saldo
+    }
+
+    // getters y setters
+    public  void  setNombre ( String  s ) {
+        nombre = s;
+    }
+
+    public  void  setNumeroCuenta ( String  s ) {
+        numeroCuenta = s;
+    }
+
+     vacío  público setTipoInteres ( doble  n ) {
+        tipoInteres = n;
+    }
+
+     vacío  público setSaldo ( doble  n ) {
+        saldo = n;
+    }
+
+     Cadena  pública getNombre () {
+        volver nombre;
+    }
+
+     Cadena  pública getNumeroCuenta () {
+        regresa numeroCuenta;
+    }
+
+    public  doble  getTipoInteres () {
+        volver tipoInteres;
+    }
+
+     doble  público getSaldo () {
+        saldo devuelto
+    }
+
+    // método ingreso
+     ingreso booleano  público ( doble n ) { 
+        ingreso booleanoCorrecto =  true ;
+        si (n <  0 ) {
+            ingresoCorrecto =  falso ;
+        } else {
+            saldo = saldo + n;
+        }
+        volver ingresoCorrecto;
+    }
+
+    // método reintegro
+    público  booleano  reintegro ( doble  n ) {
+        boolean reintegroCorrecto =  true ;
+        si (n <  0 ) {
+            reintegroCorrecto =  falso ;
+        } else  if (saldo > = n) {
+            saldo - = n;
+        } else {
+            reintegroCorrecto =  falso ;
+        }
+        volver reintegroCorrecto;
+    }
+
+    // método de transferencia
+     transferencia booleana  pública ( CUENTA c , doble n ) {  
+        boolean correcto =  true ;
+        si (n <  0 ) {
+            correcto =  falso ;
+        } else  if (saldo > = n) {
+            reintegro (n);
+            c . ingreso (n);
+        } else {
+            correcto =  falso ;
+        }
+        volver correcto
+    }
+}
+
+
+
+/ *
+ * Para cambiar este encabezado de licencia, elija los encabezados de licencia en Propiedades del proyecto.
+* Para cambiar este archivo de plantilla, seleccione Herramientas | Plantillas
+ * y abrir la plantilla en el editor.
+ * /
+ paquete  BANCO.pkg1 ;
+import  java.util.Scanner ;
+/ **
+ *
+* @autor PC09-LAB02
+ * /
+público  de clase  PRACTICA1 {
+
+    / **
+     * @param args los argumentos de línea de comando
+     * /
+    public  static  void  main ( String [] args ) {
+      Escáner sc =  nuevo  escáner ( System . In);
+Cuerda nombre, numero;
+doble tipo, importe;
+
+// se crea objeto cuenta1 sin parámetros
+// se ejecuta el constructor por defecto
+CUENTA cuenta1 =  nuevo  CUENTA ();
+
+Sistema . a cabo . imprimir ( " Nombre: " );
+nombre = sc . línea siguiente();
+Sistema . a cabo . imprimir ( " Número de cuenta: " );
+numero = sc . línea siguiente();
+Sistema . a cabo . impresión ( " Tipo de interes: " );
+tipo = sc . siguienteDouble ();
+Sistema . a cabo . impresión ( " Saldo: " );
+importe = sc . siguienteDouble ();
+
+cuenta1 . setNombre (nombre);
+cuenta1 . setNumeroCuenta (numero);
+cuenta1 . setTipoInteres (tipo);
+cuenta1 . setSaldo (importe);
+
+CUENTA cuenta2 =  nuevo  CUENTA ( " Juan Ferrández Rubio " , " 12345678901234567890 " , 1.75 , 300 );
+
+
+
+CUENTA cuenta3 =  nuevo  CUENTA (cuenta1);
+
+
+Sistema . a cabo . println ( " Datos de la cuenta 1 " );
+Sistema . a cabo . println ( " Nombre del titular: "  + cuenta1 . getNombre ());
+Sistema . a cabo . println ( " Número de cuenta: "  + cuenta1 . getNumeroCuenta ());
+Sistema . a cabo . println ( " Tipo de interés: "  + cuenta1 . getTipoInteres ());
+Sistema . a cabo . println ( " Saldo: "  + cuenta1 . getSaldo ());
+Sistema . a cabo . println ();
+       
+// se realiza un ingreso en cuenta1
+cuenta1 . ingreso ( 4000 );
+       
+// mostrar el saldo de cuenta1 después del ingreso
+Sistema . a cabo . println ( " Saldo: "  + cuenta1 . getSaldo ());
+       
+// mostrar los datos de cuenta2
+Sistema . a cabo . println ( " Datos de la cuenta 2 " );
+Sistema . a cabo . println ( " Nombre del titular: "  + cuenta2 . getNombre ());
+Sistema . a cabo . println ( " Número de cuenta: "  + cuenta2 . getNumeroCuenta ());
+Sistema . a cabo . println ( " Tipo de interés: "  + cuenta2 . getTipoInteres ());
+Sistema . a cabo . println ( " Saldo: "  + cuenta2 . getSaldo ());
+Sistema . a cabo . println ();
+       
+// mostrar los datos de cuenta3
+Sistema . a cabo . println ( " Datos de la cuenta 3 " );
+Sistema . a cabo . println ( " Nombre del titular: "  + cuenta3 . getNombre ());
+Sistema . a cabo . println ( " Número de cuenta: "  + cuenta3 . getNumeroCuenta ());
+Sistema . a cabo . println ( " Tipo de interés: "  + cuenta3 . getTipoInteres ());
+Sistema . a cabo . println ( " Saldo: "  + cuenta3 . getSaldo ());
+Sistema . a cabo . println ();
+       
+// realizar una transferencia de 10 € desde cuenta3 a cuenta2
+cuenta3 . transferencia (cuenta2, 10 );
+       
+// mostrar el saldo de cuenta2
+Sistema . a cabo . println ( " Saldo de la cuenta 2 " );
+Sistema . a cabo . println ( " Saldo: "  + cuenta2 . getSaldo ());
+Sistema . a cabo . println ();
+       
+// mostrar el saldo de cuenta3
+Sistema . a cabo . println ( " Saldo de la cuenta 3 " );
+Sistema . a cabo . println ( " Saldo: "  + cuenta3 . getSaldo ());
+Sistema . a cabo . println ();
+      
+    }
+    
+}
