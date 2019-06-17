@@ -1,0 +1,55 @@
+/ *
+ * Para cambiar este encabezado de licencia, elija los encabezados de licencia en Propiedades del proyecto.
+* Para cambiar este archivo de plantilla, seleccione Herramientas | Plantillas
+ * y abrir la plantilla en el editor.
+ * /
+paquete  burbuja ;
+import  java.util.Scanner ;
+/ **
+ *
+* @autor PC09-LAB02
+ * /
+público  de clase  BURBUJA {
+
+    / **
+     * @param args
+     * /
+   public  static  void  main ( String [] args ) {
+        Scanner numero = nuevo  Scanner ( System . In);
+        int num;
+        Sistema . a cabo . impresión ( " Ingrese el numero de elementos para el vector: " );
+        num = numero . nextInt ();
+        Escáner orden =  nuevo  escáner ( System . In );
+        vector int [] =  nuevo  int [ 30 ];
+        int i, j, aux;
+        para (i = 0 ; i < num; i ++ )
+        {
+            Sistema . a cabo . print ( " Datos [ " + (i + 1 ) + " ] = " );
+            vector [i] = ordenar . nextInt ();
+        }
+        para (i = 0 ; i < num; i ++ )
+        {
+            para (j = i + 1 ; j < num; j ++ )
+            {
+                if (vector [i] > vector [j])
+                {
+                    aux = vector [i];
+                    vector [i] = vector [j];
+                    vector [j] = aux;
+                }
+            }
+        }
+        Sistema . a cabo . print ( " Arreglo = { " );
+        para (i = 0 ; i < num; i ++ )
+        {
+            Sistema . a cabo . imprimir (vector [i] +  " , " );
+        }
+        Sistema . a cabo . imprimir ( " } " );
+    }  
+
+}
+
+        // Lógica de aplicación de código TODO aquí
+    }
+    
+}
