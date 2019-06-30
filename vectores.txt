@@ -1,0 +1,31 @@
+/ *
+ * Para cambiar este encabezado de licencia, elija los encabezados de licencia en Propiedades del proyecto.
+* Para cambiar este archivo de plantilla, seleccione Herramientas | Plantillas
+ * y abrir la plantilla en el editor.
+ * /
+paquete  prac1 ;
+import  java.util.Scanner ;
+
+ clase  pública Prac1 {
+
+    / **
+     * @param args los argumentos de línea de comando
+     * /
+    public  static  void  main ( String [] args ) {
+  int [] notas = new  int [ 10 ];
+  int i = 0 ;
+  
+  Escáner escáner = nuevo  escáner ( System . In);
+  mientras (i < 5 ) {
+      Sistema . a cabo . imprimir ( " NOTA INGRESO: " );
+      notas [i] = escáner . nextInt ();
+      i ++ ;
+      }
+  i = 0 ;
+  mientras (i < 5 ) {
+      Sistema . a cabo . println ( " LA NOTA ES: " + notas [i]);
+      i ++ ;
+      }
+    }
+    
+}
